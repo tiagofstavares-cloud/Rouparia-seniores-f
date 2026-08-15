@@ -112,6 +112,8 @@ body.dashboard-only-clean .dashboard [data-dashboard="stock"]{display:none!impor
 @media(max-width:520px){.athlete-cards{grid-template-columns:repeat(2,1fr);gap:8px}.athlete-photo-card{height:135px}.athlete-card-body{padding:9px}.athlete-card-body h3{font-size:14px}}
 
 .athlete-search{margin-bottom:12px}.athlete-search input{width:100%;box-sizing:border-box;padding:11px;border:1px solid var(--line);border-radius:9px}.athlete-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.athlete-card{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}.athlete-card img{width:100%;height:165px;object-fit:cover}.athlete-card .ph{height:165px;display:grid;place-items:center;background:#edf4f0;font-size:42px}.athlete-card-body{padding:10px}.athlete-card-body h3{margin:0;font-size:15px}.athlete-card-body p{margin:3px 0;color:var(--muted);font-size:11px}.athlete-profile{display:grid;grid-template-columns:300px 1fr;gap:14px}.photo-box{height:230px;border:2px dashed var(--line);border-radius:12px;display:grid;place-items:center;align-content:center;background:#f5f8f6;font-size:40px;color:var(--muted)}.photo-box small{font-size:11px}.two-cols{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}.two-cols label,.kit-grid label,.edit-grid label{font-size:11px;font-weight:800;color:#56645e}.two-cols input,.two-cols select,.kit-grid input,.kit-grid select,.edit-grid input,.edit-grid select,.edit-grid textarea{display:block;width:100%;box-sizing:border-box;margin-top:5px;padding:10px;border:1px solid var(--line);border-radius:8px;background:#fff}.kit-group{border:1px solid var(--line);border-radius:11px;padding:13px;margin-bottom:10px}.kit-group h2{font-size:15px;margin:0 0 10px}.kit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.calendar-note{padding:11px;background:#f2f7f4;border:1px solid var(--line);border-radius:10px;margin-bottom:10px;font-size:12px;color:#56645e}.match-row{display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:11px;padding:10px;margin-bottom:8px}.match-date{text-align:center;font-weight:900;font-size:11px}.match-date strong{display:block;font-size:18px;color:var(--green)}.match-team{display:flex;align-items:center;gap:9px}.match-team img{width:38px;height:38px;object-fit:contain}.match-team h3{margin:0;font-size:14px}.match-team p{margin:2px 0;color:var(--muted);font-size:11px}.edit-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.edit-grid label:last-of-type{grid-column:1/-1}@media(max-width:900px){.athlete-cards{grid-template-columns:repeat(2,1fr)}.athlete-profile{grid-template-columns:1fr}.kit-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.athlete-cards{gap:8px}.athlete-card img,.athlete-card .ph{height:135px}.match-row{grid-template-columns:45px 1fr}.match-row .btn{grid-column:2}.edit-grid{grid-template-columns:1fr}.edit-grid label:last-of-type{grid-column:auto}}
+
+.athlete-profile-head{display:flex;justify-content:space-between;gap:10px;margin-bottom:12px}.profile-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}.profile-hero{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:18px;align-items:center}.profile-photo{width:150px;height:150px;border-radius:14px;overflow:hidden;background:#edf4f0;display:grid;place-items:center;font-size:45px}.profile-photo img{width:100%;height:100%;object-fit:cover}.profile-name{font-size:25px;font-weight:900;margin:0 0 5px}.profile-meta{color:var(--muted);font-size:13px;margin:4px 0}.profile-status{display:inline-block;margin-top:8px;padding:5px 9px;border-radius:999px;background:#e8f4ed;font-size:11px;font-weight:800}.profile-section{padding:15px 18px;border-top:1px solid var(--line)}.profile-section h2{font-size:15px;margin:0 0 12px}.profile-sizes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.profile-size-group{border:1px solid var(--line);border-radius:11px;padding:11px}.profile-size-group h3{font-size:12px;margin:0 0 8px}.profile-size-group p{font-size:11px;margin:5px 0;color:var(--muted)}@media(max-width:600px){.profile-hero{grid-template-columns:100px 1fr;padding:13px;gap:12px}.profile-photo{width:100px;height:100px}.profile-name{font-size:19px}.profile-sizes{grid-template-columns:1fr}}
 </style>
 
 <style>
@@ -141,7 +143,6 @@ body.dashboard-only-clean .dashboard [data-dashboard="stock"]{display:none!impor
 .athlete-layout{display:grid;grid-template-columns:300px 1fr;gap:14px}.photo-upload{height:230px;border:2px dashed var(--line);border-radius:12px;background:#f5f8f6;display:grid;place-items:center;align-content:center;color:var(--muted);font-size:40px;overflow:hidden}.photo-upload small{font-size:11px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.form-grid label,.size-grid label{font-size:11px;font-weight:800;color:#56645e}.form-grid input,.form-grid select,.size-grid input,.size-grid select{display:block;width:100%;box-sizing:border-box;margin-top:5px;border:1px solid var(--line);border-radius:8px;padding:10px;background:#fff}.size-group{border:1px solid var(--line);border-radius:11px;padding:14px;margin-bottom:11px}.size-group h2{font-size:16px;margin:0 0 11px}.size-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.form-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}.btn.secondary{border:1px solid var(--line);background:#fff;color:#43534c;border-radius:8px;padding:10px 14px;font-weight:800}
 @media(max-width:900px){.athlete-cards{grid-template-columns:repeat(2,1fr)}.athlete-layout{grid-template-columns:1fr}.size-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.athlete-cards{grid-template-columns:repeat(2,1fr);gap:8px}.athlete-photo-card{height:135px}.athlete-card-body{padding:9px}.athlete-card-body h3{font-size:14px}}
 </style>
-<meta name="rioave-version" content="V16.2"><!-- V16.2 -->
 </head>
 <body>
 <div class="app">
@@ -181,6 +182,11 @@ body.dashboard-only-clean .dashboard [data-dashboard="stock"]{display:none!impor
   <div id="athleteCards" class="athlete-cards"></div>
 </section>
 
+
+<section id="athleteProfile" class="view">
+<div class="athlete-profile-head"><button class="btn secondary" onclick="openAthletes()">← Atletas</button><button class="btn primary" onclick="editCurrentAthlete()">Editar Atleta</button></div>
+<div id="athleteProfileContent"></div>
+</section>
 <section id="athleteForm" class="view">
   <div class="page-title">
     <div><h1 id="athleteFormTitle">Nova atleta</h1><p>Ficha individual da atleta.</p></div>
@@ -292,51 +298,42 @@ function openAthletes(){showView("athletes");setNav("atletas");renderAthletes()}
 function openAthleteForm(id=null){editingAthlete=id;showView("athleteForm");setNav("atletas");document.getElementById("athleteFormTitle").textContent=id?"Editar atleta":"Nova atleta";pendingPhoto="";let a=id?athletesData.find(x=>x.id===id):{};["aName","aNumber","aPosition","aStatus"].forEach(k=>document.getElementById(k).value="");document.getElementById("aName").value=a.name||"";document.getElementById("aNumber").value=a.number||"";document.getElementById("aPosition").value=a.position||"MÉD";document.getElementById("aStatus").value=a.status||"Ativa";["train_tshirt","train_sweat","train_thermal","train_shorts","train_rain","game_tshirt","game_shorts","game_thermal","travel_tshirt","travel_jacket","travel_pants","travel_shorts","travel_socks"].forEach(k=>document.getElementById(k).value=a[k]||"");document.getElementById("game_socks").value=a.game_socks||"";document.getElementById("photoPreview").innerHTML=a.photo?`<img src="${a.photo}" style="width:100%;height:100%;object-fit:cover;border-radius:12px">`:"📷<small>Fotografia</small>"}
 function renderAthletes(){let b=document.getElementById("athleteCards");if(!b)return;let q=(document.getElementById("athleteSearch")?.value||"").toLowerCase();let l=athletesData.filter(a=>(a.name||"").toLowerCase().includes(q)||String(a.number||"").includes(q));b.innerHTML=l.length?l.map(a=>`<div class="athlete-card" onclick="openAthleteForm('${a.id}')"><div class="athlete-photo-card">${a.photo?`<img src="${a.photo}" alt="">`:"📷"}</div><div class="athlete-card-body"><h3>${a.number?`#${a.number} · `:""}${a.name}</h3><p>${a.position||""} · ${a.status||"Ativa"}</p></div></div>`).join(""):'<div class="empty-athletes">Ainda não existem atletas. Clica em “Nova atleta” para criar a primeira ficha.</div>'}
 function previewAthletePhoto(e){let f=e.target.files?.[0];if(!f)return;let r=new FileReader();r.onload=()=>{pendingPhoto=r.result;document.getElementById("photoPreview").innerHTML=`<img src="${pendingPhoto}" style="width:100%;height:100%;object-fit:cover;border-radius:12px">`};r.readAsDataURL(f)}
-function saveAthlete(){
-  const name=document.getElementById("aName").value.trim();
-  if(!name){ alert("Indica o nome da atleta."); return; }
+function saveAthlete(){let name=document.getElementById("aName").value.trim();if(!name){alert("Indica o nome da atleta.");return}let old=editingAthlete?athletesData.find(x=>x.id===editingAthlete):{};let a={id:editingAthlete||String(Date.now()),name,number:document.getElementById("aNumber").value,position:document.getElementById("aPosition").value,status:document.getElementById("aStatus").value,photo:pendingPhoto||old.photo||""};["train_tshirt","train_sweat","train_thermal","train_shorts","train_rain","game_tshirt","game_shorts","game_thermal","travel_tshirt","travel_jacket","travel_pants","travel_shorts","travel_socks"].forEach(k=>a[k]=document.getElementById(k).value);a.game_socks=document.getElementById("game_socks").value;athletesData=editingAthlete?athletesData.map(x=>x.id===editingAthlete?a:x):[...athletesData,a];localStorage.setItem("rioave_athletes",JSON.stringify(athletesData));openAthletes()}
+function openPrepareGame(){showView("prepareGame");setNav("prepare");if(typeof renderPrep==="function")renderPrep()}
+document.addEventListener("DOMContentLoaded",()=>{showView("dashboard");renderAthletes()});
 
-  const athlete={
-    id: editAthleteId || ("a_"+Date.now()),
-    name:name,
-    number:document.getElementById("aNumber").value,
-    position:document.getElementById("aPosition").value,
-    status:document.getElementById("aStatus").value,
-    photo:photoPending || "",
-    tr_tshirt:document.getElementById("tr_tshirt").value,
-    tr_sweat:document.getElementById("tr_sweat").value,
-    tr_thermal:document.getElementById("tr_thermal").value,
-    tr_shorts:document.getElementById("tr_shorts").value,
-    tr_rain:document.getElementById("tr_rain").value,
-    gm_tshirt:document.getElementById("gm_tshirt").value,
-    gm_shorts:document.getElementById("gm_shorts").value,
-    gm_socks:document.getElementById("gm_socks").value,
-    gm_thermal:document.getElementById("gm_thermal").value,
-    tv_tshirt:document.getElementById("tv_tshirt").value,
-    tv_jacket:document.getElementById("tv_jacket").value,
-    tv_pants:document.getElementById("tv_pants").value,
-    tv_shorts:document.getElementById("tv_shorts").value,
-    tv_socks:document.getElementById("tv_socks").value
-  };
-
-  const existing=athleteData.findIndex(x=>x.id===athlete.id);
-  if(existing>=0) athleteData[existing]=athlete;
-  else athleteData.push(athlete);
-
-  localStorage.setItem("rioave_athletes",JSON.stringify(athleteData));
-  athleteData=JSON.parse(localStorage.getItem("rioave_athletes")||"[]");
-
-  editAthleteId=null;
-  photoPending="";
-  openAthletes();
-}
+const baseMatches=[["1", "12/09/2026", "Sporting CP", "Casa"], ["2", "19/09/2026", "CS Marítimo", "Fora"], ["3", "26/09/2026", "SC Braga", "Fora"], ["4", "18/10/2026", "SCU Torreense", "Casa"], ["5", "25/10/2026", "SL Benfica", "Fora"], ["6", "01/11/2026", "Valadares Gaia FC", "Casa"], ["7", "21/11/2026", "FC Porto", "Fora"], ["8", "20/12/2026", "Racing Power FC", "Casa"], ["9", "17/01/2027", "Sporting CP", "Fora"], ["10", "30/01/2027", "Vitória SC", "Casa"], ["11", "06/02/2027", "Racing Power FC", "Fora"], ["12", "14/03/2027", "SCU Torreense", "Fora"], ["13", "26/03/2027", "SC Braga", "Casa"], ["14", "11/04/2027", "Valadares Gaia FC", "Fora"], ["15", "02/05/2027", "CS Marítimo", "Casa"], ["16", "09/05/2027", "SL Benfica", "Fora"], ["17", "16/05/2027", "Vitória SC", "Fora"], ["18", "23/05/2027", "FC Porto", "Casa"]];
+const teamCrests={"Sporting CP":"https://upload.wikimedia.org/wikipedia/en/3/3e/Sporting_Clube_de_Portugal_%28Logo%29.svg","SL Benfica":"https://upload.wikimedia.org/wikipedia/en/a/a2/SL_Benfica_logo.svg","FC Porto":"https://upload.wikimedia.org/wikipedia/en/f/f1/FC_Porto.svg","SC Braga":"https://upload.wikimedia.org/wikipedia/en/7/79/SC_Braga_logo.svg"};
+let athleteData=JSON.parse(localStorage.getItem("rioave_athletes")||"[]"),editAthleteId=null,photoPending="";
+let calendarData=JSON.parse(localStorage.getItem("rioave_calendar_2627")||"null")||baseMatches.map(x=>({round:x[0],date:x[1],opponent:x[2],venue:x[3],time:"",pitch:"",notes:""}));
+function hideViews(){document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"))}
+function openAthletes(){hideViews();document.getElementById("athletes").classList.add("active");renderAthletes()}
+function openAthleteForm(id=null){editAthleteId=id;hideViews();document.getElementById("athleteForm").classList.add("active");let a=id?athleteData.find(x=>x.id===id):{};document.getElementById("athleteTitle").textContent=id?"Editar atleta":"Nova atleta";document.getElementById("aName").value=a.name||"";document.getElementById("aNumber").value=a.number||"";document.getElementById("aPosition").value=a.position||"MÉD";document.getElementById("aStatus").value=a.status||"Ativa";["tr_tshirt","tr_sweat","tr_thermal","tr_shorts","tr_rain","gm_tshirt","gm_shorts","gm_thermal","tv_tshirt","tv_jacket","tv_pants","tv_shorts","tv_socks"].forEach(k=>document.getElementById(k).value=a[k]||"");document.getElementById("gm_socks").value=a.gm_socks||"";photoPending=a.photo||"";document.getElementById("aPhotoPreview").innerHTML=photoPending?'<img src="'+photoPending+'" style="width:100%;height:100%;object-fit:cover;border-radius:12px">':"📷<small>Fotografia</small>"}
+function saveAthlete(){let name=document.getElementById("aName").value.trim();if(!name)return alert("Indica o nome.");let old=editAthleteId?athleteData.find(a=>a.id===editAthleteId):{};let a={id:editAthleteId||Date.now().toString(),name,number:document.getElementById("aNumber").value,position:document.getElementById("aPosition").value,status:document.getElementById("aStatus").value,photo:photoPending||old.photo||""};["tr_tshirt","tr_sweat","tr_thermal","tr_shorts","tr_rain","gm_tshirt","gm_shorts","gm_thermal","tv_tshirt","tv_jacket","tv_pants","tv_shorts","tv_socks"].forEach(k=>a[k]=document.getElementById(k).value);a.gm_socks=document.getElementById("gm_socks").value;athleteData=editAthleteId?athleteData.map(x=>x.id===editAthleteId?a:x):[...athleteData,a];localStorage.setItem("rioave_athletes",JSON.stringify(athleteData));openAthletes()}
 function previewPhoto(e){let f=e.target.files&&e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{photoPending=r.result;document.getElementById("aPhotoPreview").innerHTML='<img src="'+photoPending+'" style="width:100%;height:100%;object-fit:cover;border-radius:12px">'};r.readAsDataURL(f)}
-function renderAthletes(){let b=document.getElementById("athleteCards");if(!b)return;let q=(document.getElementById("athleteSearch").value||"").toLowerCase();let l=athleteData.filter(a=>a.name.toLowerCase().includes(q));b.innerHTML=l.length?l.map(a=>'<div class="athlete-card" onclick="openAthleteForm(\''+a.id+'\')">'+(a.photo?'<img src="'+a.photo+'">':'<div class="ph">📷</div>')+'<div class="athlete-card-body"><h3>'+(a.number?"#"+a.number+" · ":"")+a.name+'</h3><p>'+(a.position||"")+' · '+(a.status||"Ativa")+'</p></div></div>').join(""):'<div class="empty-athletes">Ainda não existem atletas.</div>'}
+function renderAthletes(){let b=document.getElementById("athleteCards");if(!b)return;let q=(document.getElementById("athleteSearch").value||"").toLowerCase();let l=athleteData.filter(a=>a.name.toLowerCase().includes(q));b.innerHTML=l.length?l.map(a=>'<div class="athlete-card" onclick="openAthleteProfile(\''+a.id+'\')">'+(a.photo?'<img src="'+a.photo+'">':'<div class="ph">📷</div>')+'<div class="athlete-card-body"><h3>'+(a.number?"#"+a.number+" · ":"")+a.name+'</h3><p>'+(a.position||"")+' · '+(a.status||"Ativa")+'</p></div></div>').join(""):'<div class="empty-athletes">Ainda não existem atletas.</div>'}
 function openCalendar(){hideViews();document.getElementById("calendar").classList.add("active");renderCalendar()}
 function editMatch(i){let m=calendarData[i];window.editMatchIndex=i;hideViews();document.getElementById("matchEdit").classList.add("active");document.getElementById("eOpp").value=m.opponent;document.getElementById("eDate").value=m.date?m.date.split("/").reverse().join("-"):"";document.getElementById("eTime").value=m.time||"";document.getElementById("eVenue").value=m.venue;document.getElementById("ePitch").value=m.pitch||"";document.getElementById("eNotes").value=m.notes||""}
 function saveMatch(){let m=calendarData[window.editMatchIndex],d=document.getElementById("eDate").value;m.date=d?d.split("-").reverse().join("/"):"";m.time=document.getElementById("eTime").value;m.venue=document.getElementById("eVenue").value;m.pitch=document.getElementById("ePitch").value;m.notes=document.getElementById("eNotes").value;localStorage.setItem("rioave_calendar_2627",JSON.stringify(calendarData));openCalendar()}
 function renderCalendar(){let b=document.getElementById("calendarList");if(!b)return;b.innerHTML=calendarData.map((m,i)=>'<div class="match-row"><div class="match-date"><strong>J'+m.round+'</strong>'+m.date.slice(0,5)+'</div><div class="match-team"><img src="'+(teamCrests[m.opponent]||"")+'" onerror="this.style.display=\'none\'"><div><h3>Rio Ave — '+m.opponent+'</h3><p>'+m.date+' · '+(m.time||"Hora a definir")+' · '+m.venue+(m.time?"":" · Por confirmar")+'</p></div></div><button class="btn secondary" onclick="editMatch('+i+')">Alterar</button></div>').join("")}
 renderAthletes();renderCalendar();
 
+
+function openAthleteProfile(id){
+  const a=athleteData.find(x=>x.id===id);
+  if(!a)return;
+  hideViews();
+  document.getElementById("athleteProfile").classList.add("active");
+  window.currentAthleteId=id;
+  const photo=a.photo?'<img src="'+a.photo+'">':'📷';
+  document.getElementById("athleteProfileContent").innerHTML=
+    '<div class="profile-card"><div class="profile-hero"><div class="profile-photo">'+photo+'</div><div><div class="profile-name">'+(a.name||"Atleta")+'</div><div class="profile-meta">#'+(a.number||"—")+' · '+(a.position||"—")+'</div><span class="profile-status">'+(a.status||"Ativa")+'</span></div></div>'+
+    '<div class="profile-section"><h2>Tamanhos</h2><div class="profile-sizes">'+
+    '<div class="profile-size-group"><h3>Treino</h3><p>T-shirt: '+(a.tr_tshirt||"—")+'</p><p>Sweat: '+(a.tr_sweat||"—")+'</p><p>Térmica: '+(a.tr_thermal||"—")+'</p><p>Calções: '+(a.tr_shorts||"—")+'</p><p>Impermeável: '+(a.tr_rain||"—")+'</p></div>'+
+    '<div class="profile-size-group"><h3>Jogo</h3><p>T-shirt: '+(a.gm_tshirt||"—")+'</p><p>Calções: '+(a.gm_shorts||"—")+'</p><p>Meias: '+(a.gm_socks||"—")+'</p><p>Térmica: '+(a.gm_thermal||"—")+'</p></div>'+
+    '<div class="profile-size-group"><h3>Viagem</h3><p>T-shirt: '+(a.tv_tshirt||"—")+'</p><p>Casaco: '+(a.tv_jacket||"—")+'</p><p>Calças: '+(a.tv_pants||"—")+'</p><p>Calções: '+(a.tv_shorts||"—")+'</p><p>Meias: '+(a.tv_socks||"—")+'</p></div>'+
+    '</div></div></div>';
+}
+function editCurrentAthlete(){if(window.currentAthleteId)openAthleteForm(window.currentAthleteId)}
 </script>
 </body></html>
