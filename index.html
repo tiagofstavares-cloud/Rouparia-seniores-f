@@ -141,7 +141,12 @@ body.dashboard-only-clean .dashboard [data-dashboard="stock"]{display:none!impor
 .athlete-layout{display:grid;grid-template-columns:300px 1fr;gap:14px}.photo-upload{height:230px;border:2px dashed var(--line);border-radius:12px;background:#f5f8f6;display:grid;place-items:center;align-content:center;color:var(--muted);font-size:40px;overflow:hidden}.photo-upload small{font-size:11px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.form-grid label,.size-grid label{font-size:11px;font-weight:800;color:#56645e}.form-grid input,.form-grid select,.size-grid input,.size-grid select{display:block;width:100%;box-sizing:border-box;margin-top:5px;border:1px solid var(--line);border-radius:8px;padding:10px;background:#fff}.size-group{border:1px solid var(--line);border-radius:11px;padding:14px;margin-bottom:11px}.size-group h2{font-size:16px;margin:0 0 11px}.size-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.form-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}.btn.secondary{border:1px solid var(--line);background:#fff;color:#43534c;border-radius:8px;padding:10px 14px;font-weight:800}
 @media(max-width:900px){.athlete-cards{grid-template-columns:repeat(2,1fr)}.athlete-layout{grid-template-columns:1fr}.size-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.athlete-cards{grid-template-columns:repeat(2,1fr);gap:8px}.athlete-photo-card{height:135px}.athlete-card-body{padding:9px}.athlete-card-body h3{font-size:14px}}
 </style>
-</head>
+
+<style>
+.athlete-detail{background:#fff;min-height:calc(100vh - 64px);margin:-16px -22px 0;padding-bottom:30px}.athlete-detail-head{height:66px;background:linear-gradient(135deg,#006b40,#008b55);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 18px}.athlete-detail-head h1{font-size:18px;margin:0}.athlete-detail-head button{border:0;background:none;color:#fff;font-size:27px}.athlete-detail-head .actions{display:flex;gap:10px}.athlete-detail-content{padding:22px}.athlete-detail-hero{display:grid;grid-template-columns:300px 1fr;gap:24px;align-items:center}.athlete-detail-photo{height:330px;border-radius:16px;overflow:hidden;background:#edf4f0;display:grid;place-items:center;font-size:50px}.athlete-detail-photo img{width:100%;height:100%;object-fit:cover}.detail-number{width:58px;height:58px;background:#087844;color:#fff;border-radius:12px;display:grid;place-items:center;font-size:30px;font-weight:900}.detail-name{font-size:34px;margin:10px 0 3px}.detail-position{font-size:20px;color:#66736d}.detail-status{display:inline-flex;align-items:center;gap:7px;background:#e8f5ee;color:#087844;border-radius:999px;padding:7px 12px;font-weight:800;margin:12px 0}.detail-status i{width:9px;height:9px;background:#0b8a4f;border-radius:50%;display:block}.detail-meta{display:grid;gap:8px;color:#596760;font-size:14px}.detail-tabs{display:flex;border-bottom:1px solid var(--line);margin-top:25px}.detail-tab{flex:1;padding:14px 8px;border:0;background:none;font-weight:800;color:#6a7771}.detail-tab.active{color:#087844;border-bottom:3px solid #087844}.detail-size-card{border:1px solid var(--line);border-radius:15px;overflow:hidden;margin-top:14px}.detail-size-group{padding:0 16px}.detail-size-group h3{margin:0;padding:13px 0 7px;color:#087844;font-size:15px}.detail-size-row{display:flex;justify-content:space-between;padding:11px 0;border-top:1px solid #edf0ee;font-size:14px}.detail-size-row b{font-weight:900}.detail-note{margin-top:14px;padding:18px;border:1px solid var(--line);border-radius:14px;color:var(--muted);line-height:1.5}.detail-edit{width:100%;margin-top:18px;background:#006b40;color:#fff;border:0;border-radius:12px;padding:15px;font-size:16px;font-weight:900}
+@media(max-width:700px){.athlete-detail{margin:-16px -12px 0;min-height:calc(100vh - 65px)}.athlete-detail-content{padding:15px 12px 88px}.athlete-detail-hero{grid-template-columns:1fr 1fr;gap:12px;align-items:start}.athlete-detail-photo{height:245px;border-radius:14px}.detail-number{width:48px;height:48px;font-size:25px}.detail-name{font-size:25px}.detail-position{font-size:17px}.detail-meta{font-size:12px}.detail-tab{font-size:12px}.detail-size-row{font-size:13px}.athlete-detail-head{padding:0 12px}}
+</style>
+<meta name="rioave-version" content="V16.3-fixed"><style>.view{display:none}.view.active{display:block}</style></head>
 <body>
 <div class="app">
 <aside class="sidebar">
@@ -180,6 +185,28 @@ body.dashboard-only-clean .dashboard [data-dashboard="stock"]{display:none!impor
   <div id="athleteCards" class="athlete-cards"></div>
 </section>
 
+<section id="athleteDetail" class="view">
+<div class="athlete-detail">
+  <div class="athlete-detail-head"><button onclick="openAthletes()">‹</button><h1>Atleta</h1><div class="actions"><button onclick="openAthleteEdit(currentAthleteId)">✎</button><button onclick="openAthleteEdit(currentAthleteId)">⋮</button></div></div>
+  <div class="athlete-detail-content">
+    <div class="athlete-detail-hero">
+      <div class="athlete-detail-photo" id="detailPhoto">📷</div>
+      <div>
+        <div class="detail-number" id="detailNumber">—</div>
+        <div class="detail-name" id="detailName">Atleta</div>
+        <div class="detail-position" id="detailPosition">—</div>
+        <div class="detail-status"><i></i><span id="detailStatus">Ativa</span></div>
+        <div class="detail-meta"><div id="detailNumberMeta">Número —</div><div id="detailRoleMeta">Posição —</div></div>
+      </div>
+    </div>
+    <div class="detail-tabs"><button class="detail-tab active" onclick="showDetailTab('sizes',this)">Tamanhos</button><button class="detail-tab" onclick="showDetailTab('equipment',this)">Equipamento</button><button class="detail-tab" onclick="showDetailTab('notes',this)">Observações</button></div>
+    <div id="detailSizes"><div class="detail-size-card" id="detailSizeCard"></div></div>
+    <div id="detailEquipment" style="display:none"><div class="detail-note">Sem “Equipamento atribuído” nesta ficha.</div></div>
+    <div id="detailNotes" style="display:none"><div class="detail-note">Observações da atleta.</div></div>
+    <button class="detail-edit" onclick="openAthleteEdit(currentAthleteId)">Editar Atleta</button>
+  </div>
+</div>
+</section>
 <section id="athleteForm" class="view">
   <div class="page-title">
     <div><h1 id="athleteFormTitle">Nova atleta</h1><p>Ficha individual da atleta.</p></div>
@@ -284,7 +311,8 @@ body.dashboard-only-clean .dashboard [data-dashboard="stock"]{display:none!impor
 </nav>
 
 <script>
-var athletesData=JSON.parse(localStorage.getItem("rioave_athletes")||"[]"),editingAthlete=null,pendingPhoto="";
+function safeLoad(key,fallback=[]){try{const raw=localStorage.getItem(key);return raw?JSON.parse(raw):fallback}catch(e){console.warn("Dados locais inválidos em",key);return fallback}}
+let athletesData=safeLoad("rioave_athletes",[]),editingAthlete=null,pendingPhoto="";
 function setNav(key){document.querySelectorAll(".nav button,.mobile-nav button").forEach(b=>b.classList.remove("active"));document.querySelectorAll(".nav button,.mobile-nav button").forEach(b=>{let t=(b.textContent||"").toLowerCase();if((key==="dashboard"&&t.includes("dashboard"))||(key==="atletas"&&t.includes("atletas"))||(key==="microcycle"&&t.includes("microciclo"))||(key==="prepare"&&t.includes("convocatórias")))b.classList.add("active")})}
 function showView(id){document.querySelector(".dashboard-view").style.display=id==="dashboard"?"block":"none";document.querySelectorAll(".view").forEach(v=>v.style.display="none");if(id!=="dashboard"){let v=document.getElementById(id);if(v)v.style.display="block"}setNav(id==="microcycle"?"microcycle":id==="prepareGame"?"prepare":id);window.scrollTo(0,0)}
 function openAthletes(){showView("athletes");setNav("atletas");renderAthletes()}
@@ -297,71 +325,26 @@ document.addEventListener("DOMContentLoaded",()=>{showView("dashboard");renderAt
 
 const baseMatches=[["1", "12/09/2026", "Sporting CP", "Casa"], ["2", "19/09/2026", "CS Marítimo", "Fora"], ["3", "26/09/2026", "SC Braga", "Fora"], ["4", "18/10/2026", "SCU Torreense", "Casa"], ["5", "25/10/2026", "SL Benfica", "Fora"], ["6", "01/11/2026", "Valadares Gaia FC", "Casa"], ["7", "21/11/2026", "FC Porto", "Fora"], ["8", "20/12/2026", "Racing Power FC", "Casa"], ["9", "17/01/2027", "Sporting CP", "Fora"], ["10", "30/01/2027", "Vitória SC", "Casa"], ["11", "06/02/2027", "Racing Power FC", "Fora"], ["12", "14/03/2027", "SCU Torreense", "Fora"], ["13", "26/03/2027", "SC Braga", "Casa"], ["14", "11/04/2027", "Valadares Gaia FC", "Fora"], ["15", "02/05/2027", "CS Marítimo", "Casa"], ["16", "09/05/2027", "SL Benfica", "Fora"], ["17", "16/05/2027", "Vitória SC", "Fora"], ["18", "23/05/2027", "FC Porto", "Casa"]];
 const teamCrests={"Sporting CP":"https://upload.wikimedia.org/wikipedia/en/3/3e/Sporting_Clube_de_Portugal_%28Logo%29.svg","SL Benfica":"https://upload.wikimedia.org/wikipedia/en/a/a2/SL_Benfica_logo.svg","FC Porto":"https://upload.wikimedia.org/wikipedia/en/f/f1/FC_Porto.svg","SC Braga":"https://upload.wikimedia.org/wikipedia/en/7/79/SC_Braga_logo.svg"};
-let athleteData=JSON.parse(localStorage.getItem("rioave_athletes")||"[]"),editAthleteId=null,photoPending="";
+let athleteData=safeLoad("rioave_athletes",[]),editAthleteId=null,photoPending="";
 let calendarData=JSON.parse(localStorage.getItem("rioave_calendar_2627")||"null")||baseMatches.map(x=>({round:x[0],date:x[1],opponent:x[2],venue:x[3],time:"",pitch:"",notes:""}));
 function hideViews(){document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"))}
-function openAthletes(){hideViews();document.getElementById("athletes").classList.add("active");renderAthletes()}
-function openAthleteForm(id=null){editAthleteId=id;hideViews();document.getElementById("athleteForm").classList.add("active");let a=id?athleteData.find(x=>x.id===id):{};document.getElementById("athleteTitle").textContent=id?"Editar atleta":"Nova atleta";document.getElementById("aName").value=a.name||"";document.getElementById("aNumber").value=a.number||"";document.getElementById("aPosition").value=a.position||"MÉD";document.getElementById("aStatus").value=a.status||"Ativa";["tr_tshirt","tr_sweat","tr_thermal","tr_shorts","tr_rain","gm_tshirt","gm_shorts","gm_thermal","tv_tshirt","tv_jacket","tv_pants","tv_shorts","tv_socks"].forEach(k=>document.getElementById(k).value=a[k]||"");document.getElementById("gm_socks").value=a.gm_socks||"";photoPending=a.photo||"";document.getElementById("aPhotoPreview").innerHTML=photoPending?'<img src="'+photoPending+'" style="width:100%;height:100%;object-fit:cover;border-radius:12px">':"📷<small>Fotografia</small>"}
-function saveAthlete(){let name=document.getElementById("aName").value.trim();if(!name)return alert("Indica o nome.");let old=editAthleteId?athleteData.find(a=>a.id===editAthleteId):{};let a={id:editAthleteId||Date.now().toString(),name,number:document.getElementById("aNumber").value,position:document.getElementById("aPosition").value,status:document.getElementById("aStatus").value,photo:photoPending||old.photo||""};["tr_tshirt","tr_sweat","tr_thermal","tr_shorts","tr_rain","gm_tshirt","gm_shorts","gm_thermal","tv_tshirt","tv_jacket","tv_pants","tv_shorts","tv_socks"].forEach(k=>a[k]=document.getElementById(k).value);a.gm_socks=document.getElementById("gm_socks").value;athleteData=editAthleteId?athleteData.map(x=>x.id===editAthleteId?a:x):[...athleteData,a];localStorage.setItem("rioave_athletes",JSON.stringify(athleteData));openAthletes()}
-function previewPhoto(e){let f=e.target.files&&e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{photoPending=r.result;document.getElementById("aPhotoPreview").innerHTML='<img src="'+photoPending+'" style="width:100%;height:100%;object-fit:cover;border-radius:12px">'};r.readAsDataURL(f)}
-function renderAthletes(){let b=document.getElementById("athleteCards");if(!b)return;let q=(document.getElementById("athleteSearch").value||"").toLowerCase();let l=athleteData.filter(a=>a.name.toLowerCase().includes(q));b.innerHTML=l.length?l.map(a=>'<div class="athlete-card" onclick="openAthleteForm(\''+a.id+'\')">'+(a.photo?'<img src="'+a.photo+'">':'<div class="ph">📷</div>')+'<div class="athlete-card-body"><h3>'+(a.number?"#"+a.number+" · ":"")+a.name+'</h3><p>'+(a.position||"")+' · '+(a.status||"Ativa")+'</p></div></div>').join(""):'<div class="empty-athletes">Ainda não existem atletas.</div>'}
+
 function openCalendar(){hideViews();document.getElementById("calendar").classList.add("active");renderCalendar()}
 function editMatch(i){let m=calendarData[i];window.editMatchIndex=i;hideViews();document.getElementById("matchEdit").classList.add("active");document.getElementById("eOpp").value=m.opponent;document.getElementById("eDate").value=m.date?m.date.split("/").reverse().join("-"):"";document.getElementById("eTime").value=m.time||"";document.getElementById("eVenue").value=m.venue;document.getElementById("ePitch").value=m.pitch||"";document.getElementById("eNotes").value=m.notes||""}
 function saveMatch(){let m=calendarData[window.editMatchIndex],d=document.getElementById("eDate").value;m.date=d?d.split("-").reverse().join("/"):"";m.time=document.getElementById("eTime").value;m.venue=document.getElementById("eVenue").value;m.pitch=document.getElementById("ePitch").value;m.notes=document.getElementById("eNotes").value;localStorage.setItem("rioave_calendar_2627",JSON.stringify(calendarData));openCalendar()}
 function renderCalendar(){let b=document.getElementById("calendarList");if(!b)return;b.innerHTML=calendarData.map((m,i)=>'<div class="match-row"><div class="match-date"><strong>J'+m.round+'</strong>'+m.date.slice(0,5)+'</div><div class="match-team"><img src="'+(teamCrests[m.opponent]||"")+'" onerror="this.style.display=\'none\'"><div><h3>Rio Ave — '+m.opponent+'</h3><p>'+m.date+' · '+(m.time||"Hora a definir")+' · '+m.venue+(m.time?"":" · Por confirmar")+'</p></div></div><button class="btn secondary" onclick="editMatch('+i+')">Alterar</button></div>').join("")}
 renderAthletes();renderCalendar();
 
+</script>
 
-/* V16.1 — corrected Atletas/navigation */
-(function(){
-  function hideAllViews(){
-    var dash=document.querySelector(".dashboard-view");
-    if(dash) dash.style.display="none";
-    document.querySelectorAll(".view").forEach(function(v){v.style.display="none";v.classList.remove("active")});
-  }
-  window.showView=function(id){
-    hideAllViews();
-    if(id==="dashboard"){
-      var d=document.querySelector(".dashboard-view"); if(d)d.style.display="block";
-    } else {
-      var v=document.getElementById(id); if(v){v.style.display="block";v.classList.add("active")}
-    }
-    if(window.setNav) setNav(id==="microcycle"?"microcycle":id==="prepareGame"?"prepare":id);
-    window.scrollTo(0,0);
-  };
-  window.openAthletes=function(){showView("athletes");renderAthletes();};
-  window.openAthleteForm=function(id){
-    editingAthlete=id||null;
-    showView("athleteForm");
-    setNav("atletas");
-    var title=document.getElementById("athleteFormTitle"); if(title) title.textContent=id?"Editar atleta":"Nova atleta";
-    var a=id?(window.athletesData||[]).find(function(x){return x.id===id}):{};
-    ["aName","aNumber","aPosition","aStatus"].forEach(function(k){var el=document.getElementById(k);if(el)el.value=""});
-    if(!a)a={};
-    var vals={aName:a.name||"",aNumber:a.number||"",aPosition:a.position||"MÉD",aStatus:a.status||"Ativa"};
-    Object.keys(vals).forEach(function(k){var el=document.getElementById(k);if(el)el.value=vals[k]});
-    ["train_tshirt","train_sweat","train_thermal","train_shorts","train_rain","game_tshirt","game_shorts","game_thermal","travel_tshirt","travel_jacket","travel_pants","travel_shorts","travel_socks"].forEach(function(k){var el=document.getElementById(k);if(el)el.value=a[k]||""});
-    var gs=document.getElementById("game_socks");if(gs)gs.value=a.game_socks||"";
-    pendingPhoto=a.photo||"";
-    var pp=document.getElementById("photoPreview");if(pp)pp.innerHTML=pendingPhoto?'<img src="'+pendingPhoto+'" style="width:100%;height:100%;object-fit:cover;border-radius:12px">':"📷<small>Fotografia</small>";
-  };
-  window.saveAthlete=function(){
-    var name=(document.getElementById("aName")||{}).value||""; name=name.trim();
-    if(!name){alert("Indica o nome da atleta.");return}
-    var list=window.athletesData||[];
-    var old=editingAthlete?list.find(function(x){return x.id===editingAthlete}):{};
-    if(!old)old={};
-    var a={id:editingAthlete||String(Date.now()),name:name,number:document.getElementById("aNumber").value,position:document.getElementById("aPosition").value,status:document.getElementById("aStatus").value,photo:pendingPhoto||old.photo||""};
-    ["train_tshirt","train_sweat","train_thermal","train_shorts","train_rain","game_tshirt","game_shorts","game_thermal","travel_tshirt","travel_jacket","travel_pants","travel_shorts","travel_socks"].forEach(function(k){a[k]=(document.getElementById(k)||{}).value||""});
-    a.game_socks=(document.getElementById("game_socks")||{}).value||"";
-    window.athletesData=editingAthlete?list.map(function(x){return x.id===editingAthlete?a:x}):list.concat([a]);
-    localStorage.setItem("rioave_athletes",JSON.stringify(window.athletesData));
-    openAthletes();
-  };
-  window.openCalendar=function(){showView("calendar");if(typeof renderCalendar==="function")renderCalendar()};
-  window.openMatchEdit=function(i){if(typeof editMatch==="function")editMatch(i)};
-  document.addEventListener("DOMContentLoaded",function(){setTimeout(function(){showView("dashboard");},0)});
-})();
+<script>
+let currentAthleteId=null;
+function openAthleteDetail(id){currentAthleteId=id;let a=athleteData.find(x=>x.id===id);if(!a)return;hideViews();document.getElementById('athleteDetail').classList.add('active');document.getElementById('detailPhoto').innerHTML=a.photo?'<img src="'+a.photo+'" alt="">':'📷';document.getElementById('detailNumber').textContent=a.number||'—';document.getElementById('detailName').textContent=a.name||'Atleta';document.getElementById('detailPosition').textContent=a.position||'—';document.getElementById('detailStatus').textContent=a.status||'Ativa';document.getElementById('detailNumberMeta').textContent=a.number?'#'+a.number:'Número não definido';document.getElementById('detailRoleMeta').textContent='Posição: '+(a.position||'—');renderDetailSizes(a);showDetailTab('sizes');window.scrollTo(0,0)}
+function openAthleteEdit(id){editingAthlete=id;editAthleteId=id;hideViews();document.getElementById('athleteForm').classList.add('active');let a=athleteData.find(x=>x.id===id)||{};document.getElementById('athleteFormTitle').textContent='Editar atleta';document.getElementById('aName').value=a.name||'';document.getElementById('aNumber').value=a.number||'';document.getElementById('aPosition').value=a.position||'MÉD';document.getElementById('aStatus').value=a.status||'Ativa';['tr_tshirt','tr_sweat','tr_thermal','tr_shorts','tr_rain','gm_tshirt','gm_shorts','gm_thermal','tv_tshirt','tv_jacket','tv_pants','tv_shorts','tv_socks'].forEach(k=>{let el=document.getElementById(k);if(el)el.value=a[k]||''});let gs=document.getElementById('gm_socks');if(gs)gs.value=a.gm_socks||'';photoPending=a.photo||'';let pp=document.getElementById('aPhotoPreview')||document.getElementById('photoPreview');if(pp)pp.innerHTML=photoPending?'<img src="'+photoPending+'" style="width:100%;height:100%;object-fit:cover;border-radius:12px">':'📷<small>Fotografia</small>';window.scrollTo(0,0)}
 
+
+function sizeRows(title,rows){return '<div class="detail-size-group"><h3>'+title+'</h3>'+rows.map(r=>'<div class="detail-size-row"><span>'+r[0]+'</span><b>'+((r[1]??'')||'—')+'</b></div>').join('')+'</div>'}
+function renderDetailSizes(a){document.getElementById('detailSizeCard').innerHTML=sizeRows('🏃 Treino',[['T-shirt',a.tr_tshirt],['Sweat',a.tr_sweat],['Térmica',a.tr_thermal],['Calções',a.tr_shorts],['Impermeável',a.tr_rain]])+sizeRows('⚽ Jogo',[['T-shirt',a.gm_tshirt],['Calções',a.gm_shorts],['Meias',a.gm_socks],['Térmica',a.gm_thermal]])+sizeRows('🧳 Viagem',[['T-shirt',a.tv_tshirt],['Casaco',a.tv_jacket],['Calças',a.tv_pants],['Calções',a.tv_shorts],['Meias',a.tv_socks]])}
+function showDetailTab(tab,btn){['sizes','equipment','notes'].forEach(t=>document.getElementById('detail'+t.charAt(0).toUpperCase()+t.slice(1)).style.display=t===tab?'block':'none');document.querySelectorAll('.detail-tab').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');else document.querySelector('.detail-tab').classList.add('active')}
 </script>
 </body></html>
